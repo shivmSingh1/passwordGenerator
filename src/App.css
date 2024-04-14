@@ -1,7 +1,7 @@
 
 .card{
     padding: 20px;
-    width: 60vw;
+    /* width: 40vw; */
     background-color:rgb(41, 41, 41);
     display:flex;
     justify-content: center;

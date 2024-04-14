@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  background-image: url("pgback.jpg");
   margin: 0;
   display: flex;
   justify-content: center;
