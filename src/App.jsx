@@ -18,37 +18,37 @@ function App() {
       str += "0123456789"
     }
     for (let i = 0; i < length; i++) {
-      let ch = Math.floor(Math.random()*str.length+1)
+      let ch = Math.floor(Math.random() * str.length + 1)
       pass += str.charAt(ch)
     }
     setPassword(pass)
   }, [length, charAllowed, numberAllowed, setPassword])
 
-  useEffect(()=>{
-      genratePassword()
-  },[length,numberAllowed,charAllowed,genratePassword])
+  useEffect(() => {
+    genratePassword()
+  }, [length, numberAllowed, charAllowed, genratePassword])
 
   const passwordRef = useRef(null)
-  const copy=()=>{
-     window.navigator.clipboard.writeText(password)
-     passwordRef.current?.select();
+  const copy = () => {
+    window.navigator.clipboard.writeText(password)
+    passwordRef.current?.select();
   }
 
   return (
     <>
       <div className="card">
-        <h2 id='cardTitle'>Password<span style={{color:"violet"}}>Generator</span></h2>
+        <h2 id='cardTitle'>Password<span style={{ color: "violet" }}>Generator</span></h2>
         <div className="inputAndCopy">
-        <input type="text" placeholder='Password' id='inputText' value={password} readOnly ref={passwordRef} />
-        <button  onClick={copy}>copy</button>
+          <input type="text" placeholder='Password' id='inputText' value={password} readOnly ref={passwordRef} />
+          <button onClick={copy}>copy</button>
         </div>
         <div className="additional">
           <input type="range" min='0' max='100' id='length' value={length} onChange={(e) => { setLength(e.target.value) }} />
           <label htmlFor="length">Length {length}</label>
-          <input type="checkbox" id='number' checked={numberAllowed} onChange={()=>setNumberAllowed(!numberAllowed)} />
-          <label htmlFor="number">Number</label>
-          <input type="checkbox" id='char' checked={charAllowed} onChange={()=>setCharAllowed(!charAllowed)} />
-          <label htmlFor="char">Character</label>
+          <label htmlFor="number">
+            <input type="checkbox" id='number' checked={numberAllowed} onChange={() => setNumberAllowed(!numberAllowed)} /> Number</label>
+          <label htmlFor="char">
+            <input type="checkbox" id='char' checked={charAllowed} onChange={() => setCharAllowed(!charAllowed)} /> Character</label>
         </div>
       </div>
     </>

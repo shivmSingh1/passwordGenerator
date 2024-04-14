@@ -38,4 +38,8 @@
     align-items: center;
 }
 
-
+@media only screen and (max-width: 430px) {
+    #inputText{
+        width: 60vw;
+    }
+}
