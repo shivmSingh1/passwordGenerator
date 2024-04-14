@@ -24,9 +24,13 @@ function App() {
     setPassword(pass)
   }, [length, charAllowed, numberAllowed, setPassword])
 
-  useEffect(() => {
-    genratePassword()
-  }, [length, numberAllowed, charAllowed, genratePassword])
+  // useEffect(() => {
+  //   genratePassword()
+  // }, [length, numberAllowed, charAllowed, genratePassword])
+
+  const generateBtn = () => {
+    genratePassword();
+  }
 
   const passwordRef = useRef(null)
   const copy = () => {
@@ -50,6 +54,7 @@ function App() {
           <label htmlFor="char">
             <input type="checkbox" id='char' checked={charAllowed} onChange={() => setCharAllowed(!charAllowed)} /> Character</label>
         </div>
+          <button onClick={generateBtn} id='genBtn'>Generate</button>
       </div>
     </>
   )

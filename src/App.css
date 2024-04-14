@@ -38,6 +38,11 @@
     align-items: center;
 }
 
+#genBtn{
+    background-color: green; 
+    border-radius: 8px;
+}
+
 @media only screen and (max-width: 430px) {
     #inputText{
         width: 60vw;
