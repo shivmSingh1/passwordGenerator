@@ -2,7 +2,7 @@
 .card{
     padding: 20px;
     /* width: 40vw; */
-    background-color:rgb(41, 41, 41);
+    background-image:url(card2bg.jpg);
     display:flex;
     justify-content: center;
     align-items: center;
@@ -37,3 +37,5 @@
     justify-content: center;
     align-items: center;
 }
+
+
